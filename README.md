@@ -1,6 +1,6 @@
-# LPC Documentation for the Epistasis Lab
+# LPC Documentation for the Ritchie Lab
 
-*Written by members (and friends) of the lab.*
+*Written by members (and friends) of the Moore lab (https://github.com/EpistasisLab) and modified by the Ritchie Lab.*
 
 ## Contents
 
@@ -59,21 +59,26 @@ Notes:The LPC can be accessed (i.e. logged on to) online directly while on campu
 You can access either sciget.pmacs.upenn.edu or scisub.pmacs.upenn.edu without VPN and then from any of these you can ssh to sarlacc. You can also directly submit jobs to the LPC from scisub.pmacs.upenn.edu. Note however that there is talk about sciget and scisub only being available from the VPN in the future.
 - **Step 3: Log onto VPN from off campus**. ([Instructions here](https://www.med.upenn.edu/pmacs/pulseduo.html)).
 
-When each of these are complete, you should be able to log into the LPC using the instructions that follow. Note: You'll need to log into
+When each of these are complete, you should be able to log into the LPC using the instructions that follow. Note: You'll need to log into the VPN prior to logging into LPC.
 
 ## Logging into the LPC
 
 To login to the LPC (and reach your home directory) you will need either a terminal program (i.e. command line) or (if preferred) a graphical user interface (GUI) program. These programs differ if you have Windows, Mac or Linux Machine. Please see the following link for your appropriate operating system and style of login:
 https://wiki.pmacs.upenn.edu/pub/LPC  (Under 'Login Software Installation')
 A specific Windows example is provided later in this section.
-Once you have an appropriate program, you will use it to log on to a server (based on who you are affiliated with). This file server/host is a head node, from which you can navigate the LPC directories (including your home) and submit jobs.  There are currently two servers that may be relevant to this group for LPC job submissions, they are called scisub and sarlacc. For the Moore lab, sarlacc is generally recommended, but both will work in most cases.
-sarlacc (sarlacc.pmacs.upenn.edu) is the Moore lab's submit host.  It is only accessible on campus or through VPN.  This server is 'beefier' than others and has its own dedicated cores and storage space. This allows users to run 'smaller' computing processes directly on this head node (but this should be avoided).  It also allows users to install and manage their own 'environment'.  For example if you wish to install the 'anaconda' package for running jobs you will need to log onto sarlacc.
-scisub (scisub.pmacs.upenn.edu) is the submit host used by most LPC users.  It is open to the world (SSH only – i.e. a secure remote login protocol). From scisub you can also ssh to sarlacc.  Note that unlike sarlacc, scisub is a virtual host with limited computing power.  It cannot be used to run local processes or manually install environment packages. In addition, there are 2 other servers relevant to this group for the below tasks, but you cannot submit jobs to the LPC from these servers:
-sciget (sciget.pmacs.upenn.edu): you can ssh to it and it has outbound network access. Primarily useful for wget, git, svn, etc.
-transfer (transfer.pmacs.upenn.edu) is used for transferring files from LPC to a local machine (sftp, scp and rsync). You cannot ssh to it.
+Once you have an appropriate program, you will use it to log on to a server (based on who you are affiliated with). This file server/host is a head node, from which you can navigate the LPC directories (including your home) and submit jobs.  
+
+The Ritchie Lab has its own server on LPC, which can be used to run small and non-resource interactive interactive jobs. The full instructions for accessing this server, including a basic overview of the folder structure and how to set up the Ritchie Lab environment, are currently located in the Ritchie Lab orientation materials on the shared Box folder and pinned to the #general Slack channel. 
+
+In addition, there are 3 other servers relevant to this group for the below tasks, but you cannot submit jobs to the LPC from these servers:
+
+- sciget (sciget.pmacs.upenn.edu): you can ssh to it and it has outbound network access. Primarily useful for wget, git, svn, etc.
+- transfer (transfer.pmacs.upenn.edu) is used for transferring files from LPC to a local machine (sftp, scp and rsync). You cannot ssh to it.
+- scisub (scisub.pmacs.upenn.edu) is the submit host used by many other LPC user groups. It is open to the world (SSH only – i.e. a secure remote login protocol). Be aware that scisub is a virtual host with limited computing power and does not currently mount project or home directories. It cannot be used to run local processes or manually install environment packages. For this reason, you will mostly not use this 
+
 
 ### Logging in from Linux:
-`ssh username@sarlacc.pmacs.upenn.edu`
+`ssh username@servername.pmacs.upenn.edu`
 
 ### Logging in from Windows
 
@@ -147,12 +152,12 @@ Depending on what you want to run on the LPC, you may need to install various ap
 To avoid confusion and keep things centralized, PMACS installs and manages common applications in a shared central directory that are available to all the hosts in our cluster.
 The LPC terms these environmental elements as 'modules'.
 Modules can be loaded or unloaded to be made available in your run environment.
-This means that these modules will be available if you were to run a program locally on `sarlacc`, or when you submit a job from a given host (i.e., `sarlacc` or `scisub`).
+This means that these modules will be available if you were to run a program locally or when you submit a job from a given host.
 Terminal commands for working with modules are available at this link:
 
 https://wiki.pmacs.upenn.edu/pub/LPC#Modules
 
-Alternatively if some application or package is not available or (for some reason) can't be installed by PMACS under modules, you can install such packages or applications in your home directory (assuming you are logged onto `sarlacc`!).
+Alternatively if some application or package is not available or (for some reason) can't be installed by PMACS under modules, you can install such packages or applications in your home directory.
 Be advised that PMACS provides very limited (if any) support when loading or using such installations on your own.
 
 ## Using queues
@@ -162,9 +167,8 @@ At face value, a queue represents a set of pending jobs (i.e. a 'container' for 
 On the LPC different queues are available to different user groups allowing them to run their jobs.
 You must be associated with, and have permission from, a specific user group in order to submit jobs to their associated queue.
 Each queue is set up by PMACS with their own set of rules, defaults, and access to specific execute hosts (i.e. the servers comprised of computing cores where individual jobs are run).
-Moore lab queues are described at the following link:
 
-https://wiki.pmacs.upenn.edu/pub/Epistasis_lab
+More detail on the Ritchie Lab queues including template submission scripts can be found in the Ritchie Lab orientaion materials on the shared Box folder and pinned to the #general Slack channel.
 
 There are a few general queue types:
 
@@ -187,91 +191,9 @@ Computing 'jobs' can be submitted individually from the command line, or you can
 **IBM's LSF documentation is available here:**
 https://www.ibm.com/support/knowledgecenter/en/SSWRJV_10.1.0/lsf_welcome/lsf_welcome.html
 
-## Best practices
+Additionally, if you are planning to submit a large number of resource intensive jobs, it is recommended to post in the #support-lpc Slack channel with an estimate of the number of nodes the jobs will occupy and amount time they will take to complete. This helps us coordinate schedules among lab members.
 
-### TPOT cuML
-
-With "TPOT cuML" configuration (see <a href="../using/#built-in-tpot-configurations">built-in configurations</a>), TPOT will search over a restricted configuration using the GPU-accelerated estimators in [RAPIDS cuML](https://github.com/rapidsai/cuml) and [DMLC XGBoost](https://github.com/dmlc/xgboost). **This configuration requires an NVIDIA Pascal architecture or better GPU with [compute capability 6.0+](https://developer.nvidia.com/cuda-gpus), and that the library cuML is installed.** With this configuration, all model training and predicting will be GPU-accelerated. This configuration is particularly useful for medium-sized and larger datasets on which CPU-based estimators are a common bottleneck, and works for both the `TPOTClassifier` and `TPOTRegressor`.
-
-#### Installation for using TPOT-cuML configuration
-Please download this conda environment <a href="https://github.com/EpistasisLab/tpot/blob/master/tpot-cuml.yml">yml file</a></td> to install TPOT for using TPOT-cuML configuration.
-
-```bash
-conda env create -f tpot-cuml.yml -n tpot-cuml
-conda activate tpot-cuml
-```
-
-#### Using TPOT-cuML in interactive mode of LPC
-- setting environment
-
-```bash
-# so far only penncil1 has the GPU for TPOT cuML
-bsub -Is -q gpu -m penncil1 -gpu "num=1" -n 1 'bash'
-conda activate tpot-cuml
-ipython
-```
-- running a quick TPOT-cuML demo in iPython
-
-```python
-from tpot import TPOTClassifier
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-NSAMPLES = 500000
-NFEATURES = 500
-SEED = 12
-
-# For cuML with TPOT, you must use CPU data (such as NumPy arrays)
-X, y = make_classification(
-    n_samples=NSAMPLES,
-    n_features=NFEATURES,
-    n_informative=NFEATURES,
-    n_redundant=0,
-    class_sep=0.75,
-    n_classes=2,
-    random_state=SEED,
-
-)
-
-X = X.astype("float32")
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, random_state=SEED)
-GENERATIONS = 10
-POP_SIZE = 50
-CV = 5
-
-tpot = TPOTClassifier(
-    generations=GENERATIONS,
-    population_size=POP_SIZE,
-    random_state=SEED,
-    config_dict="TPOT cuML", # this will using TPOT cuML
-    n_jobs=1, # cuML requires n_jobs=1, the default
-    cv=CV,
-    verbosity=2,
-)
-
-tpot.fit(X_train, y_train)
-print(tpot.score(X_test, y_test))
-```
-
-#### Sample job script for TPOT-cuML jobs
-
-
-```bash
-#!/bin/bash
-#BSUB -J myjobname
-#BSUB -o outputfile.%J.out
-#BSUB -e errorfile.%J.err
-#BSUB -q gpu
-#BSUB -n 1
-#BSUB -gpu "num=1"
-#BSUB -m penncil1
-#BSUB -M 60000
-conda activate tpot-cuml
-cd /project/moore/users/myhomedirectory
-python test_cuml.py
-```
-
-## Miscellaneous tips
+## Best practices & Miscellaneous tips
 
 [TODO]
 
@@ -323,6 +245,8 @@ Some other LSF commands can be found [here](https://www.med.upenn.edu/hpc/assets
 |---------|-------------|
 | `df -h` | Get current disk usage and total disk capacity |
 | `du -hs` | Get size of current directory |
+
+*Please note that at the request of PMACS, `du` commands should be used sparingly to avoid catastrophic burden on the filesystem*
 
 ### Sample job script
 

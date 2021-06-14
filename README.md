@@ -4,7 +4,7 @@
 
 ## Contents
 
-- [LPC Documentation for the Epistasis Lab](#lpc-documentation-for-the-epistasis-lab)
+- LPC Documentation for the Ritchie Lab
   - [Contents](#contents)
   - [Introduction](#introduction)
   - [Links and other resources](#links-and-other-resources)
@@ -19,11 +19,6 @@
   - [Using queues](#using-queues)
   - [Submitting Jobs](#submitting-jobs)
   - [Best practices](#best-practices)
-    - [TPOT cuML](#tpot-cuml)
-      - [Installation for using TPOT-cuML configuration](#installation-for-using-tpot-cuml-configuration)
-      - [Using TPOT-cuML in interactive mode](#using-tpot-cuml-in-interactive-mode)
-      - [Sample job script for TPOT-cuML jobs](#sample-job-script-for-tpot-cuml-jobs)
-
   - [Miscellaneous tips](#miscellaneous-tips)
   - [Troubleshooting](#troubleshooting)
   - [LPC Commands Cheat Sheet](#lpc-commands-cheat-sheet)

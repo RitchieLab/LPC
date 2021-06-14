@@ -188,8 +188,6 @@ Additionally, if you are planning to submit a large number of resource intensive
 
 ## Best practices & Miscellaneous tips
 
-[TODO]
-
 To avoid accidental deletion or overwriting of files it is recommended that you put these aliases in your .bashrc:
 
 - alias rm='rm -i'
@@ -197,6 +195,8 @@ To avoid accidental deletion or overwriting of files it is recommended that you 
 - alias cp='cp -i'
 
 Each of these will prompt linux to ask you confirmation for the corresponding action.
+
+To avoid filling up our disk space, plan to direct large job outputs and easily generated intermediate files to `/project/scratch/`. You can check the disk you are working on by using `realpath .` or `pwd -P` and the amount of space left by using `df -h`. Note that scratch space is not backed up, so you should not use it for long term storage of data that is near and dear to you!!!
 
 ## Troubleshooting
 

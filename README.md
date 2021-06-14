@@ -89,7 +89,7 @@ The terminal is best for submitting jobs and the GUI is best for navigating and 
 **Logging in with PuTTY:**
 - Ensure you are connected to VPN via PulseSecure.
 - Open the putty .exe file
-- In the 'Session' window, enter `sarlacc.pmacs.upenn.edu` under 'Host Name'
+- In the 'Session' window, enter `servername.pmacs.upenn.edu` under 'Host Name'
 - Confirm `'Port' = 22` and `'Connection type' = SSH`
 - [For convenience] In the 'Connection/Data' window put the LPC username you were assigned into 'auto-login username'
 - [For convenience] Go back to the 'Session' window and type in any session 'name' into 'Saved Sessions'. E.g. 'LPC_sarlacc'

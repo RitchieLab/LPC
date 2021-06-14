@@ -206,8 +206,9 @@ Each of these will prompt linux to ask you confirmation for the corresponding ac
 ## Troubleshooting
 
 If you have any question, you can post in the #support-lpc Slack channel and, if necessary, submit a ticket at https://helpdesk.pmacs.upenn.edu/
+
 It's also a good idea to provide your ip address when asking a question regarding connection: http://www.med.upenn.edu/myip.
-If there is still issue connecting to sarlacc, try emptying the contents of the `~/.ssh/known_hosts` file.
+
 
 ## LPC Commands Cheat Sheet
 

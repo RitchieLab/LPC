@@ -50,7 +50,7 @@ In order to use the LPC you will need to learn how to access it, how to navigate
 
 ## Getting Started (e.g., new students)
 
-- **Step 1: Get your PennKey and request LPC account access.** If you don't yet have a PennKey, please email medhelp@pennmedicine.upenn.edu to request one. Then, you can email Curt Calafut with your PennKey, CCing Jason, to request access to the LPC. You will be assigned an account username which will serve as the name of your home directory as well as be used to log onto the LPC.
+- **Step 1: Get your PennKey and request LPC account access.** If you don't yet have a PennKey, please email medhelp@pennmedicine.upenn.edu to request one. Then, you can contact Anastasia to help you request access to the LPC. You will be assigned an account username which will serve as the name of your home directory as well as be used to log onto the LPC.
 - **Step 2: Set up VPN for off campus LPC access**.
 Notes:The LPC can be accessed (i.e. logged on to) online directly while on campus, but in order to log on (specifically the Moore lab's sarlacc server) from off campus you will first need to connect to campus with a virtual private network (VPN).
   - First, make sure you enroll in [DUO Two-factor authentication](https://wiki.pmacs.upenn.edu/pub/HSRDC_Getting_Started#Duo_Two-Factor_Authentication). This is needed to access most online UPenn resources from off campus.

@@ -83,10 +83,10 @@ In addition, there are 3 other servers relevant to this group for the below task
 It is useful to install both the terminal and GUI software below.
 The terminal is best for submitting jobs and the GUI is best for navigating and managing the file hierarchy and copying files to and from the LPC.
 
-- **Windows (Terminal): [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/)**
+- **Windows (Terminal): [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/)**
 - **Windows (GUI): [WinSCP](https://winscp.net/eng/download.php)**
 
-**Logging in with Putty:**
+**Logging in with PuTTY:**
 - Ensure you are connected to VPN via PulseSecure.
 - Open the putty .exe file
 - In the 'Session' window, enter `sarlacc.pmacs.upenn.edu` under 'Host Name'

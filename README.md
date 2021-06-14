@@ -101,7 +101,7 @@ The terminal is best for submitting jobs and the GUI is best for navigating and 
 **Logging in with WinSCP:**
 - Ensure you are connected to VPN via PulseSecure.
 - Open WinSCP software
-- In the 'Session' window, enter `sarlacc.pmacs.upenn.edu` under 'Host Name'
+- In the 'Session' window, enter `servername.pmacs.upenn.edu` under 'Host Name'
 - Confirm `'Port' = 22`, `'Connection type' = SSH`, and `'File protocol' = SFTP`
 - Enter your username and password where indicated
 - [For convenience] Click Save and give your session any name for future use.
@@ -119,7 +119,7 @@ As mentioned in the above section, while MacOS built-in terminal is sufficient f
 - Open Cyberduck
 - Select `Open Connection` on the top left
 - In this window, select `SFTP (SSH File Transfer Protocol)`
-- Enter `sarlacc.pmacs.upenn.edu` under `'Server'`
+- Enter `servername.pmacs.upenn.edu` under `'Server'`
 - Confirm `'Port' = 22`
 - Enter your PMACS username and password
 - Click `Connect`, and a GUI will open up allowing you to view the directory on the LPC (it should open you up to your home directory the first time logging on).

@@ -80,6 +80,7 @@ The terminal is best for submitting jobs and the GUI is best for navigating and 
 
 - **Windows (Terminal): [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/)**
 - **Windows (GUI): [WinSCP](https://winscp.net/eng/download.php)**
+- **Windows (All-in-One): [MobaXterm](https://wiki.pmacs.upenn.edu/public/MobaXterm)**
 
 **Logging in with PuTTY:**
 - Ensure you are connected to VPN via PulseSecure.
@@ -103,6 +104,11 @@ The terminal is best for submitting jobs and the GUI is best for navigating and 
 - Click 'Login' to connect, and a GUI will open up allowing you to view both your local PC's directory as well as the directory on the LPC (it should open you up to your home directory the first time logging on).
 
 Note that it is also possible to configure WinSCP to automatically open a putty terminal upon connection.
+
+**Logging in with MobaXterm:**
+- This is the PMACS preferred method to interact with LPC.
+- MobaXterm can be downloaded from https://mobaxterm.mobatek.net/, see https://mobaxterm.mobatek.net/documentation.html#2 for additional documentation
+- Please consult the instructions on the PMACS wiki for more details regardig usage and installation 
 
 ### Logging in from MacOS
 

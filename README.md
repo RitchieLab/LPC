@@ -70,7 +70,7 @@ In addition, there are 3 other servers relevant to this group for the below task
 - scisub (scisub.pmacs.upenn.edu) is the submit host used by many other LPC user groups. It is open to the world (SSH only – i.e. a secure remote login protocol). Be aware that scisub is a virtual host with limited computing power and does not currently mount project or home directories. It cannot be used to run local processes or manually install environment packages. For this reason, you will mostly not use this 
 
 
-### Logging in from Linux:
+### Logging in from Linux/Mac Terminal:
 `ssh username@servername.pmacs.upenn.edu`
 
 ### Logging in from Windows

@@ -43,6 +43,10 @@ In order to use the LPC you will need to learn how to access it, how to navigate
 
 - [PMACS Wiki - Batch Computing](https://wiki.pmacs.upenn.edu/pub/Batch_Computing)
 
+- [Ritchie Lab Wiki - Unix Tutorial](https://ritchielab.org/wiki) (Pennkey required)
+
+- [Unix Tutorial From Binglan Li](https://docs.google.com/presentation/d/1Xx5ztakEVnGDImlTOkspCy1yRAvqe_esSIuTfV3KYv0/edit#slide=id.p)
+
 ## Getting Started (e.g., new students)
 
 - **Step 1: Get your PennKey and request LPC account access.** If you don't yet have a PennKey, please email medhelp@pennmedicine.upenn.edu to request one. Then, you can contact Anastasia to help you request access to the LPC. You will be assigned an account username which will serve as the name of your home directory as well as be used to log onto the LPC.

@@ -273,8 +273,7 @@ $ bsub < script.bsub
 ```
 ### Frequently asked questions
 
-1. **My jobs have been stuck in the queue with `PENDING` status forever and I need them to start running!
-**
+1. **My jobs have been stuck in the queue with `PENDING` status forever and I need them to start running!**
    
    Unfortunately, if many other people are also running jobs, you may just have to wait your turn. You can check how many jobs are waiting in our queues using the command
    `bjobs -u "all" |grep "epistasis"`

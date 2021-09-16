@@ -265,8 +265,9 @@ cd /project/moore/users/myhomedirectory
 python3.7 script.py -parA 0 -parB value
 ```
 
-Assuming this is saved to a file named `script.sh`, you can submit the job by running:
+Assuming this is saved to a file named `script.sh` or `script.bsub`, you can submit the job by running:
 
 ```bash
 $ bsub < script.sh
+$ bsub < script.bsub
 ```

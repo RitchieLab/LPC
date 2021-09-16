@@ -325,15 +325,25 @@ $ bsub < script.bsub
    bcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > ${myValue}".norm.vcf"
    ```
 
-4. **I can't get my R package to install.**
+4. **My job finished but it didn't output anything. What happened?**
+
+   First, make sure you have enabled the options to get a resource summary emailed to you and to output the `.err` file. Commonly a few things could have happened.
+
+   1. The job produced an error of some sort and you will need to fix your script.
+   2. The job ran out of walltime or memory. You can look at the resource usage e-mail to see if this happened. 
+   3. The job ran fine, but there was no disk space to write the output file. If you didn't get any errors and the resource usage looks fine, you can check which disk you were writing the output file to using `pwd -P` and how much space is left on the disk using `df -h`. If there is limited space, you may need to either temporarily direct your output to a `scratch` disk or work with other lab members to move files around. 
+
+5. **I can't get my R package to install.**
 
    There are a number of reasons why this may happen. If you get an error such as
    `ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for []`
    the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. `gcc`, `boost`, `mpfr`, and `mpc` are common offenders.
 
-5. 
+6. **LPC is running very slowly!**
 
-6. **I'm getting an error that wasn't mentioned here and I don't know what it means or how to fix it. **
+   First, you might want to check with others in the lab to see if they are experiencing similar issues and it's not just a glitch or momentary network problem. You might also want to have a look at the current running processes using `top`. If you or someone else is running a resource intensive process from the log in node, it might be best to kill the process and start an `ibash` session.
+
+7. **I'm getting an error that wasn't mentioned here and I don't know what it means or how to fix it. **
    
    Well the first thing we usually want to do in this case is the classic Google/StackOverflow combination. _Most_ of the time, you probably haven't broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet. 
    

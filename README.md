@@ -4,27 +4,30 @@
 
 ## Contents
 
-- [Introduction](#introduction)
-- [Links and other resources](#links-and-other-resources)
-- [Getting Started (e.g., new students)](#getting-started--eg--new-students-)
-- [Logging into the LPC](#logging-into-the-lpc)
-  * [Logging in from Linux/Mac Terminal:](#logging-in-from-linux-mac-terminal-)
-  * [Logging in from Windows](#logging-in-from-windows)
-  * [Logging in from MacOS](#logging-in-from-macos)
-    + [Using Cyberduck](#using-cyberduck)
-- [Navigating the LPC from a command line](#navigating-the-lpc-from-a-command-line)
-- [Customizing your environment](#customizing-your-environment)
-- [Using queues](#using-queues)
-- [Submitting Jobs](#submitting-jobs)
-- [Best practices & Miscellaneous tips](#best-practices---miscellaneous-tips)
-- [Troubleshooting](#troubleshooting)
-- [LPC Commands Cheat Sheet](#lpc-commands-cheat-sheet)
-  * [LSF (job scheduling system) commands](#lsf--job-scheduling-system--commands)
-  * [PMACS software module commands](#pmacs-software-module-commands)
-  * [Miscellaneous commands](#miscellaneous-commands)
-  * [Sample job script](#sample-job-script)
+- [LPC Documentation for the Ritchie Lab](#lpc-documentation-for-the-ritchie-lab)
+  * [Introduction](#introduction)
+  * [Links and other resources](#links-and-other-resources)
+  * [Getting Started (e.g., new students)](#getting-started--eg--new-students-)
+  * [Logging into the LPC](#logging-into-the-lpc)
+    + [Logging in from Linux/Mac Terminal:](#logging-in-from-linux-mac-terminal-)
+    + [Logging in from Windows](#logging-in-from-windows)
+    + [Logging in from MacOS](#logging-in-from-macos)
+      - [Using Cyberduck](#using-cyberduck)
+  * [Navigating the LPC from a command line](#navigating-the-lpc-from-a-command-line)
+  * [Customizing your environment](#customizing-your-environment)
+  * [Using queues](#using-queues)
+  * [Submitting Jobs](#submitting-jobs)
+  * [Best practices & Miscellaneous tips](#best-practices---miscellaneous-tips)
+  * [Troubleshooting](#troubleshooting)
+  * [LPC Commands Cheat Sheet](#lpc-commands-cheat-sheet)
+    + [LSF (job scheduling system) commands](#lsf--job-scheduling-system--commands)
+    + [PMACS software module commands](#pmacs-software-module-commands)
+    + [Miscellaneous commands](#miscellaneous-commands)
+    + [Sample job script](#sample-job-script)
+    + [Frequently asked questions](#frequently-asked-questions)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Introduction
 

@@ -271,3 +271,34 @@ Assuming this is saved to a file named `script.sh` or `script.bsub`, you can sub
 $ bsub < script.sh
 $ bsub < script.bsub
 ```
+### Frequently asked questions and troubleshooting
+1. My jobs have been stuck in the queue with `PENDING` status forever and I need them to start running!
+
+   Unfortunately, if many other people are also running jobs, you may just have to wait your turn. You can check how many jobs are waiting in our queues using the command
+   `bjobs -u "all" |grep "epistasis"`
+
+   However, even if there are many jobs waiting, there are some ways that you might be able to reduce how long your job sits in the queue. Sometime people will request much more memory, walltime, and/or nodes than the job actually needs to run. Your job cannot start until the resources you request are available, so the more you request, potentially the longer it could take to start. If you have ran a similar job before, check the resource usage to see the max memory and time it took to run. You may be able to reduce your current resource requests based on what you find. Also make sure that the program or function you are running is actually able to take advantage of multiple nodes. For example, requesting 16 nodes to run an Rscript that you haven't parallized will reserve 15 extra nodes for nothing.
+   
+   Remember if you are running an analysis that requires a lot of resources, it's a good idea to post in #support-lpc with a summary of your compute needs and time it will take to complete so that all lab members can know and plan accordingly and make sure there are no deadline conflicts.
+
+2. I calculated how long my jobs will take to run on LPC and it is months of compute time!
+   
+   
+
+2. I can't get my R package to install.
+
+   There are a number of reasons why this may happen. If you get an error such as
+   `ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for []`
+   the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. `gcc`, `boost`, `mpfr`, and `mpc` are common offenders.
+
+3. 
+
+4. I'm getting an error that wasn't mentioned here and I don't know what it means. 
+   
+   Well the first thing we usually want to do in this case is the classic Google/StackOverflow combination. _Most_ of the time, you probably haven't broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet. 
+   
+   If Google doesn't work, you may want to search for keywords from your error in the lab's Slack to see if any other lab members have come across the problem before. If you can't find it, you can post the error in #support-lpc. It is great practice to post the full error message along with the line of code or command that you were running. If you have a problem with a script another lab member wrote for you, it's also great to provide a small, reproducible example that they can run and try to troubleshoot.
+
+   Lastly, if you are having an issue with something like installing a software package or a bizarre problem with a job submission and have exhausted all the other options, you can try submitting a ticket to DART at [helpdesk.pmacs.upenn.edu](helpdesk.pmacs.upenn.edu). Again they will best be able to help you if you give them all the relevant detail mentioned above. 
+   
+   

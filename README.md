@@ -320,7 +320,7 @@ $ bsub < script.bsub
    #other BSUB options as normal
 
    #job commands
-   myArray=(`ls -1 /path/to/input/files/chr*vcf |sed 's@/path/to/input/files/chr@@' |sed 's/\.vcf/'`)
+   myArray=(`ls -1 /path/to/input/files/chr*vcf`) # you can chain sed, cut, etc. commands here using pipes if you want to format the values in the array!
    myValue="${myArray[${LSB_JOBINDEX} - 1]}" 
    bcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > ${myValue}".norm.vcf"
    ```

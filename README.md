@@ -271,9 +271,10 @@ Assuming this is saved to a file named `script.sh` or `script.bsub`, you can sub
 $ bsub < script.sh
 $ bsub < script.bsub
 ```
-### Frequently asked questions and troubleshooting
-1. My jobs have been stuck in the queue with `PENDING` status forever and I need them to start running!
+### Frequently asked questions
 
+1. **My jobs have been stuck in the queue with `PENDING` status forever and I need them to start running!
+**
    Unfortunately, if many other people are also running jobs, you may just have to wait your turn. You can check how many jobs are waiting in our queues using the command
    `bjobs -u "all" |grep "epistasis"`
 
@@ -281,19 +282,58 @@ $ bsub < script.bsub
    
    Remember if you are running an analysis that requires a lot of resources, it's a good idea to post in #support-lpc with a summary of your compute needs and time it will take to complete so that all lab members can know and plan accordingly and make sure there are no deadline conflicts.
 
-2. I calculated how long my jobs will take to run on LPC and it is months of compute time!
+2. **I calculated how long my jobs will take to run on LPC and it is months of compute time!**
    
+   You may ask Marylyn about possibly moving your analysis, or a portion or your analysis, to DNAnexus. If you want to use DNAnexus to run an analysis, generally you will need to do some cost scoping to have a rough idea of the total compute costs before you submit.
+
+3. **How can I run the same job on a bunch of different input files or with a bunch of different parameters without creating a `bsub` script for each one?**
+   
+   This is a perfect scenario for subitting an array job! The array index is saved into a variable called `LSB_JOBINDEX`. Say you want to run `bcftools norm` for 3 chromosomes with in files named `chr1.vcf`, `chr2.vcf`, and `chrX.vcf`. You could make the following changes to your script
+  
+  ```bash
+   #!/bin/bash
+   #BSUB -J jobname[1-3]
+   #other BSUB options as normal
+
+   #job commands
+   myArray=("1" "2" "X") 
+   myValue="${myArray[${LSB_JOBINDEX} - 1]}"  # to access each element in the array
+   bcftools norm -m -any /path/to/file/chr${myValue}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${myValue}"_norm.vcf"
+   ```
+
+   If all of your chromosome file names contain integers, you could even simplify this to just using the `LSB_JOBINDEX` variable directly like
+   
+   ```bash
+   #!/bin/bash
+   #BSUB -J jobname[1-22]
+   #other BSUB options as normal
+
+   #job commands
+   bcftools norm -m -any /path/to/file/chr${LSB_JOBINDEX}.vcf -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > chr${LSB_JOBINDEX}"_norm.vcf"
+   ```
    
 
-2. I can't get my R package to install.
+   Another tip is that you can also use a command to get the array. For example if you have a list of chr files called `chr1.vcf` etc., you can do something like      
+   ```bash
+   #!/bin/bash
+   #BSUB -J jobname[1-3]
+   #other BSUB options as normal
+
+   #job commands
+   myArray=(`ls -1 /path/to/input/files/chr*vcf |sed 's@/path/to/input/files/chr@@' |sed 's/\.vcf/'`)
+   myValue="${myArray[${LSB_JOBINDEX} - 1]}" 
+   bcftools norm -m -any ${myValue} -Ou | bcftools view -Q 0.05:minor -c 20:minor -Ov > ${myValue}".norm.vcf"
+   ```
+
+4. **I can't get my R package to install.**
 
    There are a number of reasons why this may happen. If you get an error such as
    `ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for []`
    the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. `gcc`, `boost`, `mpfr`, and `mpc` are common offenders.
 
-3. 
+5. 
 
-4. I'm getting an error that wasn't mentioned here and I don't know what it means. 
+6. **I'm getting an error that wasn't mentioned here and I don't know what it means or how to fix it. **
    
    Well the first thing we usually want to do in this case is the classic Google/StackOverflow combination. _Most_ of the time, you probably haven't broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet. 
    

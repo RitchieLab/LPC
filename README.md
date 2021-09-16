@@ -346,7 +346,7 @@ $ bsub < script.bsub
 
    First, you might want to check with others in the lab to see if they are experiencing similar issues and it's not just a glitch or momentary network problem. You might also want to have a look at the current running processes using `top`. If you or someone else is running a resource intensive process from the log in node, it might be best to kill the process and start an `ibash` session.
 
-7. **I'm getting an error that wasn't mentioned here and I don't know what it means or how to fix it. **
+7. **I'm getting an error that wasn't mentioned here and I don't know what it means or how to fix it.**
    
    Well the first thing we usually want to do in this case is the classic Google/StackOverflow combination. _Most_ of the time, you probably haven't broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet. 
    

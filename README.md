@@ -287,7 +287,10 @@ $ bsub < script.bsub
 
 2. **I calculated how long my jobs will take to run on LPC and it is months of compute time!**
    
-   You may ask Marylyn about possibly moving your analysis, or a portion or your analysis, to DNAnexus. If you want to use DNAnexus to run an analysis, generally you will need to do some cost scoping to have a rough idea of the total compute costs before you submit.
+   You may ask Marylyn about possibly moving your analysis, or a portion or your analysis, to DNAnexus. If you want to use DNAnexus to run an analysis, generally you will need to do some cost scoping to have a rough idea of the total compute costs before you submit. 
+   
+   Remember that you can auto-launch jobs on DNANexus similar to how you would run a job array on LPC using `dx clone`. For example, if you have a number of vcf input files you would like to run the using the same BioBin parameters, you can run the job once, then clone the job for each additional input file in a certain directory, etc. An example command to run BioBin using the same phenotype file and parameters with multiple VCF inputs (named by gene and position) would be something like this
+   `for i in $(dx ls); do fileid=$(dx describe  $i | grep "ID" | awk '{print $2}'); gene=$(echo $i | cut -d"." -f3); positions=$(echo $i | cut -d"." -f3,5 | sed 's/\./_/g');dx run biobin --clone job-jobid -ivcf_file=${fileid}  -iphenotype_file="file-fileid" -ibiobin_args="-F 0.01 --weight-loci Y --bin-pathways N --bin-regions Y --bin-minimum-size 1 --bin-interregion N --genomic-build 37 --include-region-names ${gene}" -ioutput_prefix="biobin_${positions}" --name "Biobin - Latest - ${positions}" --destination "project-projectid:/Output_Folder/${gene}" -y; done;`
 
 3. **How can I run the same job on a bunch of different input files or with a bunch of different parameters without creating a `bsub` script for each one?**
    

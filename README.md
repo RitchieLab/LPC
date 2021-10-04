@@ -352,7 +352,7 @@ $ bsub < script.bsub
    
 7. **How do I deal with all of these job notification emails?**
 
-   It can be helpful to set a filter in Outlook to direct job notification emails to a folder other than your Inbox. You should be able to filter all jobs from sender "LSF" or similar. 
+   It can be helpful to set a rule in Outlook to direct job notification emails to a folder other than your Inbox. Since each node has a unique email address, you would need to set up multiple conditions like "Subject includes 'in cluster'" and "Message body includes 'Job was executed on host'".
 
 8. **I'm getting an error or have a problem that wasn't mentioned here and I don't know what it means or how to fix it.**
    

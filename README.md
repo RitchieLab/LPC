@@ -349,13 +349,17 @@ $ bsub < script.bsub
 6. **LPC is running very slowly!**
 
    First, you might want to check with others in the lab to see if they are experiencing similar issues and it's not just a glitch or momentary network problem. You might also want to have a look at the current running processes using `top`. If you or someone else is running a resource intensive process from the log in node, it might be best to kill the process and start an `ibash` session.
+   
+7. **How do I deal with all of these job notification emails?**
 
-7. **I'm getting an error that wasn't mentioned here and I don't know what it means or how to fix it.**
+   It can be helpful to set a filter in Outlook to direct job notification emails to a folder other than your Inbox. You should be able to filter all jobs from sender "LSF" or similar. 
+
+8. **I'm getting an error or have a problem that wasn't mentioned here and I don't know what it means or how to fix it.**
    
    Well the first thing we usually want to do in this case is the classic Google/StackOverflow combination. _Most_ of the time, you probably haven't broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet. 
    
    If Google doesn't work, you may want to search for keywords from your error in the lab's Slack to see if any other lab members have come across the problem before. If you can't find it, you can post the error in #support-lpc. It is great practice to post the full error message along with the line of code or command that you were running. If you have a problem with a script another lab member wrote for you, it's also great to provide a small, reproducible example that they can run and try to troubleshoot.
 
    Lastly, if you are having an issue with something like installing a software package or a bizarre problem with a job submission and have exhausted all the other options, you can try submitting a ticket to DART at [helpdesk.pmacs.upenn.edu](helpdesk.pmacs.upenn.edu). Again they will best be able to help you if you give them all the relevant detail mentioned above. 
-   
+
    

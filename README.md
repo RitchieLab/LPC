@@ -354,6 +354,7 @@ $ bsub < script.bsub
     2. `module load ImageMagick/7.0.8-44`
     3. `module load fftw/3.3.8`
     4. `display image.png`
+    
     Your file should display in an XQuartz window.
 
 7. **LPC is running very slowly!**

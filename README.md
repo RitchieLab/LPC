@@ -346,15 +346,25 @@ $ bsub < script.bsub
    `ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for []`
    the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. `gcc`, `boost`, `mpfr`, and `mpc` are common offenders.
 
-6. **LPC is running very slowly!**
+6. **How can I view a png file on LPC**
+
+    Mac users can open an image file by completing the following steps:
+    1. install XQuartz https://www.xquartz.org/
+    1. `ssh -Y username@server.pmacs.upenn.edu` 
+    2. `module load ImageMagick/7.0.8-44`
+    3. `module load fftw/3.3.8`
+    4. `display image.png`
+    Your file should display in an XQuartz window.
+
+7. **LPC is running very slowly!**
 
    First, you might want to check with others in the lab to see if they are experiencing similar issues and it's not just a glitch or momentary network problem. You might also want to have a look at the current running processes using `top`. If you or someone else is running a resource intensive process from the log in node, it might be best to kill the process and start an `ibash` session.
    
-7. **How do I deal with all of these job notification emails?**
+8. **How do I deal with all of these job notification emails?**
 
    It can be helpful to set a rule in Outlook to direct job notification emails to a folder other than your Inbox. Since each node has a unique email address, you would need to set up multiple conditions like "Subject includes 'in cluster'" and "Message body includes 'Job was executed on host'".
 
-8. **I'm getting an error or have a problem that wasn't mentioned here and I don't know what it means or how to fix it.**
+9. **I'm getting an error or have a problem that wasn't mentioned here and I don't know what it means or how to fix it.**
    
    Well the first thing we usually want to do in this case is the classic Google/StackOverflow combination. _Most_ of the time, you probably haven't broken something beyond repair and instead just found a common bug that has already been solved by many other people on the internet. 
    

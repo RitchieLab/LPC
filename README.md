@@ -346,7 +346,7 @@ $ bsub < script.bsub
    `ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for []`
    the issue may be as simple as quitting the R session, loading a module for the library that you are getting an error about, and restarting R. `gcc`, `boost`, `mpfr`, and `mpc` are common offenders.
 
-6. **How can I view a png file on LPC**
+6. **How can I view a png file on LPC?**
 
     Mac users can open an image file by completing the following steps:
     1. install XQuartz https://www.xquartz.org/
@@ -355,7 +355,7 @@ $ bsub < script.bsub
     3. `module load fftw/3.3.8`
     4. `display image.png`
     
-    Your file should display in an XQuartz window.
+    Your file should now display in an XQuartz window.
 
 7. **LPC is running very slowly!**
 
